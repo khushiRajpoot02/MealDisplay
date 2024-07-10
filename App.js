@@ -11,32 +11,45 @@ import {
   View,
   ViewBase,
   FlatList,
-} from "react-native";
+}
+ from "react-native";
 
 export default function App() {
   const [showTest, setShowTest] = useState([]);
+  const[isModalVisible, setModalVisible] = useState(false);
 
   function buttonHandler(inputText) {
     setShowTest((currentGoal) => [
       ...currentGoal,
-
-      // inputText
-
       { text: inputText, id: Math.random().toString() },
     ]);
+    cancelGoalHandler();
   }
 
   function deleteGoalHandler(id) {
     setShowTest((currentCourseGoal) => {
-      currentCourseGoal.filter((goal) => {
+      return currentCourseGoal.filter((goal) => {
         return goal.id !== id;
       });
     });
   }
 
+
+  function adGoalModalButton(){
+    setModalVisible(true);
+  }
+  function cancelGoalHandler(){
+    setModalVisible(false);
+
+  }
+
   return (
     <View style={styles.container}>
-      <GoalInput onAddGoal={buttonHandler} />
+<View>
+<Button title="Add Modal.." color={'purple'} onPress={adGoalModalButton}></Button>
+</View>
+      
+      {isModalVisible && <GoalInput onAddGoal={buttonHandler} showModal={isModalVisible}  cancelGoal = {cancelGoalHandler} />}
       <View style={styles.goalContainer}>
         <FlatList
           alwaysBounceVertical={false}
@@ -105,3 +118,5 @@ const styles = StyleSheet.create({
   //   color: "white",
   // },
 });
+
+

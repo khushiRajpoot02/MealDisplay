@@ -10,15 +10,20 @@ import {
   ViewBase,
   FlatList,
   Pressable,
+  Modal
 } from "react-native";
 
 function GoalList(props) {
   return (
-    <Pressable onPress={props.onDeleteGoal.bind(this, props.id)}>
-      <View style={styles.goalContainerText}>
+
+    <View style={styles.goalContainerText}>
+      <Pressable
+        onPress={props.onDeleteGoal.bind(this, props.id)}
+        android_ripple={{ color: "red" }}
+      >
         <Text style={styles.goalText}>{props.text}</Text>
-      </View>
-    </Pressable>
+      </Pressable>
+    </View>
   );
 }
 
