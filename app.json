@@ -2,7 +2,8 @@
   "expo": {
     "name": "udemy-practice-app",
     "slug": "udemy-practice-app",
-    "version": "1.0.0"
+    "version": "1.0.0",
+     "backgroundColor" : "#24180f"
   },
   "name": "udemy-practice-app"
 }
