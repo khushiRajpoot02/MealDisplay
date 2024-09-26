@@ -9,15 +9,10 @@ import MealdetailScreen from "./screens/MealDetailScreen";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import FavoritesScreen from "./screens/FavoritesScreen";
 const Stack = createNativeStackNavigator();
-import FavoritesContextProvider from "./store/context/favorites-context";
-import IconButton from "./component/IconButton";
-
+import { Provider } from 'react-redux'
 const Drawer = createDrawerNavigator();
+import { store } from "./store/redux/store";
 
-
-// function handleheaderButttonPress() {
-//   console.log("pressed!! vuihduewhfi");
-// }
 
 function DrawerNavigator() {
   return (
@@ -34,24 +29,14 @@ function DrawerNavigator() {
     >
       <Drawer.Screen name="Category" component={CategoryScreen} />
 
-      <Drawer.Screen name="Favorite" component={FavoritesScreen} options={
-        {
-          // drawerIcon : ()=>{
-          //   return   <IconButton
-          //   onPress={handleheaderButttonPress}
-          //   icon="star"
-          //   color="white"
-          // />
-          // }
-        }
-      } />
+      <Drawer.Screen name="Favorite" component={FavoritesScreen}/>
     </Drawer.Navigator>
   );
 }
 
 export default function App() {
   return (
-    <FavoritesContextProvider>
+    <Provider store = {store}>
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
@@ -75,7 +60,7 @@ export default function App() {
           />
         </Stack.Navigator>
       </NavigationContainer>
-    </FavoritesContextProvider>
+      </Provider>
   );
 }
 const styles = StyleSheet.create({});
