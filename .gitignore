@@ -1,35 +1,67 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
-# dependencies
+# Node modules
 node_modules/
 
-# Expo
-.expo/
-dist/
-web-build/
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Native
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
+# Metro bundler cache
+# https://facebook.github.io/metro/docs/en/configuration
+.cache/
+temp/
 
-# Metro
-.metro-health-check*
+# React Native packager
+*.pack
+*.pack.*
 
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
+# Xcode
+ios/Pods/
+ios/build/
+ios/DerivedData/
+ios/*.xcodeproj/xcuserdata/
+ios/*.xcodeproj/project.xcworkspace/
+ios/*.xcodeproj/xcshareddata/
+ios/*.xcworkspace/xcuserdata/
+ios/*.xcworkspace/xcshareddata/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Android/IntelliJ
+android/.gradle/
+android/app/build/
+android/app/release/
+android/local.properties
+android/.idea/
+android/captures/
+*.iml
 
 # macOS
-.DS_Store
-*.pem
+*.DS_Store
 
-# local env files
-.env*.local
+# fastlane
+# It is recommended to not store the screenshots in the git repo.
+# Instead, use fastlane to re-generate the screenshots.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+*/fastlane/report.xml
+*/fastlane/Preview.html
+*/fastlane/screenshots/**/*.png
+*/fastlane/test_output/**/test*.log
 
-# typescript
-*.tsbuildinfo
+# Bundle files
+*.jsbundle
+
+# Temporary files
+*.tmp
+*.temp
+
+# Other IDEs
+.idea/
+.vscode/
+
+# NPM
+package-lock.json
+yarn.lock
